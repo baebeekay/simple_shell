@@ -1,0 +1,1 @@
+This script is used to answer the simple_shell project given by Github
