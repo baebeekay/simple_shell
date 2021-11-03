@@ -13,7 +13,7 @@ then ` ./hsh` to run.
 
 ## Contribution
 Since it is a team project, contribution was by
-1. **Amarachi Kalu Ndukwe**
+1. **Amarachi Kalu Ndukwe** 
 2. **Animashaun Olawunmi**
 
 ## Exernal system calls / function used
