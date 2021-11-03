@@ -19,7 +19,7 @@ char *search_cwd(char *filename, char *er)
 	dir = opendir(".");
 	if (!dir)
 	{
-		printf("Error! Unable to open directory.\n");
+		perror("Error");
 		exit(0);
 	}
 	while ((sd = readdir(dir)))
@@ -34,9 +34,13 @@ char *search_cwd(char *filename, char *er)
 				strcat(ret, filename);
 				closedir(dir);
 				if (!(access(ret, X_OK)))
+				{
 					return (ret);
+				}
 				else
+				{
 					write(2, er, 5);
+				}
 			}
 		}
 	}
