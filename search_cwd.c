@@ -2,6 +2,7 @@
 /**
  * search_cwd - look for current working dir
  * @filename: file name
+ * @er: pointer char
  * Return: current working dir
  */
 char *search_cwd(char *filename, char *er)
