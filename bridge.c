@@ -19,3 +19,4 @@ int bridge(char *check, char **args)
 	}
 	return (2);
 }
+

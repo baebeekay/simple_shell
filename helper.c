@@ -53,6 +53,32 @@ char **split_line(char *line)
  * @env: Environment
  * Return: 1 if builtins exist, 0 if they don't
  */
+int check_for_builtins(char **args, char *line, char **env)
+{
+	builtins_t list[] = {
+		{"exit", exit_shell},
+		{"env", env_shell},
+		{NULL, NULL}
+	};
+	int i;
+
+	for (i = 0; list[i].arg != NULL; i++)
+	{
+		if (_strcmp(list[i].arg, args[0]) == 0)
+		{
+			list[i].builtin(args, line, env);
+			return (1);
+		}
+	}
+	return (0);
+}
+/**
+ * check_for_builtins - Checks for builtins
+ * @args: Arguments passed from prompt
+ * @line: Buffer with line of input from user
+ * @env: Environment
+ * Return: 1 if builtins exist, 0 if they don't
+ */
 int launch_prog(char **args)
 {
 	pid_t pid, wpid;
@@ -80,4 +106,25 @@ int launch_prog(char **args)
 	}
 	(void)wpid;
 	return (1);
+}
+/**
+ * builtins_checker - Checks for builtins
+ * @args: Arguments passed from prompt
+ * Return: 1 if builtins exist, 0 if they don't
+ */
+int builtins_checker(char **args)
+{
+	int i;
+	builtins_t list[] = {
+		{"exit", exit_shell},
+		{"env", env_shell},
+		{NULL, NULL}
+	};
+
+	for (i = 0; list[i].arg != NULL; i++)
+	{
+		if (_strcmp(list[i].arg, args[0]) == 0)
+			return (1);
+	}
+	return (0);
 }
