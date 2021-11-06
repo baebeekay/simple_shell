@@ -11,10 +11,8 @@ void shell(int ac, char **av, char **env)
 	char *line;
 	char **args;
 	int status = 1;
-	char *tmp = NULL;
 	char *er;
-	char *filename;
-	int flow;
+	char *filename = "/bin/";
 
 	er = "Error";
 	do {
