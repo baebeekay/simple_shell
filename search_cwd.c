@@ -43,6 +43,7 @@ char *search_cwd(char *filename, char *er)
 				}
 			}
 		}
+		ret = '\0';
 	}
 	closedir(dir);
 	return (er);
