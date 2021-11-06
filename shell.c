@@ -40,9 +40,9 @@ void shell(int ac, char **av, char **env)
 		free(args);
 	} while (status);
 	if (!ac)
-		(void)ac;
-	if (!av)
-		(void)av;
-	if (!env)
-		(void)env;
+		void(ac);
+		if (!av)
+		void (av);
+		if (!env)
+		void(env);
 }
